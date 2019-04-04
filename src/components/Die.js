@@ -16,10 +16,13 @@ export default class extends Component {
             this.setState({ history: newHistory, previous: this.state.roll})
             // this.state.previous = this.state.roll
         }
-        this.setState({ roll: Math.ceil(Math.random() * this.state.numSides)})
+        const rando = Math.random()
+        console.log(rando)
+        this.setState({ roll: Math.ceil(rando * this.state.numSides) })
     }
     render() {
         const displayHistory = this.state.history.join(', ')
+        console.log(this.state.numSides, this.state.history)
         return (
             <div className="box">
                 <pre>
