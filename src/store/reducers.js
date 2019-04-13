@@ -5,15 +5,14 @@ import {
     ROLL_ALL
 } from './actions'
 
-function dice(state = [], action) {
+function dice(state = [  ], action) {
     switch (action.type) {
         case ADD_DIE:
             return [
                 ...state,
                 {
                     numSides: action.num,
-                    roll: 0,
-                    history: []
+                    roll: 0
                 }
             ]
         case ROLL_DIE:
@@ -26,13 +25,11 @@ function dice(state = [], action) {
                 return die
             })
         case ROLL_ALL:
-            let newState = state
-            newState.forEach((die) => {
-                Object.assign({}, die, {
-                        roll: action.rando * die.numSides
-                    })
+            return state.map((die) => {
+                return Object.assign({}, die, {
+                    roll: action.rando * die.numSides
                 })
-            return newState
+            })
         default:
             return state
     }
