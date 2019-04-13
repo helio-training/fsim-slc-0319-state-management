@@ -31,9 +31,9 @@ export default class extends Component {
                     <legend>Create A New Die</legend>
                     <form onSubmit={this.addNewDie}>
                         <input type='number' name="newDie" placeholder="New Die" onChange={this.handleChange} />
-                        <input type='text' name="username" placeholder="UserName" onChange={this.handleChange} />
+                        {/* <input type='text' name="username" placeholder="UserName" onChange={this.handleChange} />
                         <input type='password' name="password" placeholder="Password" onChange={this.handleChange} />
-                        <input type='email' name="email" placeholder="Email" onChange={this.handleChange} />
+                        <input type='email' name="email" placeholder="Email" onChange={this.handleChange} /> */}
                         <button type='submit'>Create</button>
                     </form>
                 </fieldset>

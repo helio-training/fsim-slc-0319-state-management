@@ -10,7 +10,7 @@ export default class extends Component {
         }
     }
     roll = () => {
-        if(this.state.roll != 0){
+        if(this.state.roll !== 0){
             let newHistory = this.state.history
             newHistory.push(this.state.roll)
             this.setState({ history: newHistory, previous: this.state.roll})
