@@ -11,7 +11,7 @@ let AddDie = ({ dispatch }) => {
                 onSubmit={e => {
                     e.preventDefault()
                     const action = addDie(input.value)
-                    console.log(action)
+                    // console.log(action)
                     dispatch(action)
                     input.value = ''
                 }}

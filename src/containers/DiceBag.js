@@ -13,8 +13,8 @@ const mapDispatchToProps = dispatch => {
         onRoll: index => {
             dispatch(rollDie(index, Math.random()))
         },
-        rollAll: () => {
-            dispatch(rollAll(Math.random()))
+        rollAll: (randos) => {
+            dispatch(rollAll(randos))
         }
     }
 }

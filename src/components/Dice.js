@@ -2,14 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Die from './Die'
 
-const Dice = ({ dice, onRoll, rollAll }) => (
-    <div>
-        <input type="button" onClick={rollAll} value="Roll All" />
-        {dice.map((die, index) => (
-            <Die key={index} {...die} onClick={() => onRoll(index)} />
-        ))}
-    </div>
-)
+const Dice = ({ dice, onRoll, rollAll }) => {
+    let randos = dice.map(() => Math.random())
+    return (
+        <div>
+            <input type="button" onClick={() => rollAll(randos)} value="Roll All" />
+            {dice.map((die, index) => (
+                <Die key={index} {...die} onClick={() => onRoll(index)} />
+            ))}
+        </div>
+    )
+}
 
 Dice.propTypes = {
     dice: PropTypes.arrayOf(

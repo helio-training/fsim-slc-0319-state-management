@@ -5,7 +5,23 @@ import {
     ROLL_ALL
 } from './actions'
 
-function dice(state = [  ], action) {
+const defaultDice = [ 
+    {
+        numSides: 6,
+        roll: 0
+    },
+    {
+        numSides: 10,
+        roll: 0
+    },
+    {
+        numSides: 20,
+        roll: 0
+    }
+]
+
+function dice(state = defaultDice, action) {
+    console.log('Reducers', state, action)
     switch (action.type) {
         case ADD_DIE:
             return [
@@ -25,9 +41,9 @@ function dice(state = [  ], action) {
                 return die
             })
         case ROLL_ALL:
-            return state.map((die) => {
+            return state.map((die, index) => {
                 return Object.assign({}, die, {
-                    roll: action.rando * die.numSides
+                    roll: action.randos[index] * die.numSides
                 })
             })
         default:
